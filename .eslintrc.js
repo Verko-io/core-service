@@ -1,0 +1,80 @@
+module.exports = {
+  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    project: 'tsconfig.json',
+    tsconfigRootDir: __dirname,
+    sourceType: 'module',
+  },
+  plugins: ['@typescript-eslint/eslint-plugin', 'prettier'],
+  extends: [
+    'eslint:recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
+    'plugin:node/recommended-module',
+  ],
+  root: true,
+  env: {
+    node: true,
+    jest: true,
+  },
+  ignorePatterns: ['.eslintrc.js', '**/*.spec.ts', '*.json', '**/dist/', 'node_modules'],
+  rules: {
+    // TS
+    '@typescript-eslint/interface-name-prefix': 'off',
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-unused-vars': 'warn',
+    '@typescript-eslint/no-empty-function': 'warn',
+    // node
+    'node/exports-style': ['error', 'exports'],
+    'node/file-extension-in-import': 'off',
+    'node/prefer-global/buffer': ['error', 'always'],
+    'node/prefer-global/console': ['error', 'always'],
+    'node/prefer-global/process': ['error', 'always'],
+    'node/prefer-global/url-search-params': ['error', 'always'],
+    'node/prefer-global/url': ['error', 'always'],
+    'node/prefer-promises/dns': 'error',
+    'node/prefer-promises/fs': 'error',
+    'node/no-unsupported-features/es-syntax': 'off',
+    'node/no-missing-import': 'off',
+    'node/no-unpublished-import': 'off',
+    'node/no-extraneous-import': 'off',
+    // common
+    'prettier/prettier': 'error',
+    'max-classes-per-file': ['error', 1],
+    camelcase: [
+      'error',
+      {
+        properties: 'never',
+        ignoreDestructuring: false,
+        ignoreImports: true,
+      },
+    ],
+    'no-underscore-dangle': 'warn',
+    'no-console': ['error'],
+    'newline-per-chained-call': 'error',
+    'no-multi-spaces': ['error'],
+    eqeqeq: ['error', 'always'],
+    'space-before-blocks': ['warn'],
+    quotes: [
+      'error',
+      'single',
+      {
+        allowTemplateLiterals: true,
+        avoidEscape: true,
+      },
+    ],
+    'quote-props': ['warn', 'as-needed'],
+  },
+  // 'sort-imports': [
+  //   'warn',
+  //   {
+  //     ignoreCase: false,
+  //     ignoreDeclarationSort: false,
+  //     ignoreMemberSort: false,
+  //     memberSyntaxSortOrder: ['none', 'all', 'single', 'multiple'],
+  //     allowSeparatedGroups: false,
+  //   },
+  // ],
+};

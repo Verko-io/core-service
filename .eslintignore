@@ -1,0 +1,8 @@
+.github
+.husky
+node_modules
+.git
+dist
+.eslintrc.js
+README.md
+.nvmrc

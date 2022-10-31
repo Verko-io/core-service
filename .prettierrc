@@ -1,0 +1,14 @@
+{
+  "printWidth": 100,
+  "singleQuote": true,
+  "quoteProps": "as-needed",
+  "useTabs": false,
+  "tabWidth": 2,
+  "semi": true,
+  "trailingComma": "all",
+  "bracketSpacing": true,
+  "arrowParens": "always",
+  "importOrder": ["^(@(nestjs|nestjsx)/)|(nest-)(.*)$", "^@app/(.*)$", "^((../){0,}|(src/))common/(.*)$", "^[./]"],
+  "importOrderSeparation": true,
+  "endOfLine": "auto"
+}
